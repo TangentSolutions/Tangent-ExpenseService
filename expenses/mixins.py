@@ -1,5 +1,7 @@
 class MultiSerializerMixin:
-
+    '''
+    serializer_map = {}
+    '''
     serializer_map = {}
     default_serializer = None
 
@@ -22,7 +24,6 @@ class MultiSerializerMixin:
             "retrieve": ReadOnlyPractitionerAppointmentSerializer,
             "default": AppointmentSerializer,
         }
-
 
         # is_practitioner will fail on anon user
         # anon users _can only create appointment_

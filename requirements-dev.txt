@@ -1,0 +1,12 @@
+ipython
+ipdb
+mock
+responses
+sniffer
+
+pylint
+coverage
+django_nose
+pinocchio
+nose-html-reporting
+Faker

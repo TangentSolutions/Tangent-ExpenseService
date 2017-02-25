@@ -14,7 +14,7 @@ EXPENSE_STATUSES = [
 class ExpenseClaim(models.Model):
     """..."""
 
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='expense_claims')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='users')
     name = models.CharField(max_length=200)
     description = models.TextField()
     status = models.CharField(
@@ -27,5 +27,6 @@ class ExpenseClaim(models.Model):
 
 class ExpensePhoto(models.Model):
     '''...'''
-    photo = models.ImageField()
+    claim = models.ForeignKey('ExpenseClaim', related_name='photos')
+    photo = models.ImageField(blank=True, null=True)
     description = models.TextField()
